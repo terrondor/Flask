@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Посты</h2>
+    {% if current_user.is_authenticated %}
+        <p>Приветствую, {{ current_user.username }}! <a href="{{ url_for('logout') }}">Выйти</a></p>
+    {% else %}
+        <p><a href="{{ url_for('login') }}">Login</a> | <a href="{{ url_for('register') }}">Зарегистрироваться</a></p>
+    {% endif %}
+    <ul>
+        {% for post in posts %}
+            <li>
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.content }}</p>
+                <p>Пост создан: {{ post.author.username }}</p>
+                <a href="{{ url_for('edit', id=post.id) }}">Изменить</a>
+                <a href="{{ url_for('delete', id=post.id) }}">Удалить</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
