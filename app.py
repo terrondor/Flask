@@ -3,7 +3,7 @@ from flask_login import LoginManager
 from backend.database import db
 from routers.user_routers import user_bp
 from routers.post_routers import post_bp
-from models import User
+from models.models import User
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///blog.db"

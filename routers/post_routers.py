@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_login import login_required, current_user
 from backend.database import db
-from models import Post
+from models.models import Post
 
 post_bp = Blueprint("post", __name__)
 
