@@ -10,8 +10,8 @@
     <div class="container">
         <h1>Мини Блог</h1>
         <nav>
-            <a href="{{ url_for('index') }}">Главная</a>
-            <a href="{{ url_for('create') }}">Создать пост</a>
+            <a href="{{ url_for('main.index') }}">Главная</a>
+            <a href="{{ url_for('main.create') }}">Создать пост</a>
         </nav>
         {% with messages = get_flashed_messages(with_categories=true) %}
           {% if messages %}
